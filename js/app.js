@@ -1,4 +1,4 @@
-let pendulum = new Pendulum(1, 7860, 1, Math.PI / 2);
+let pendulum = new DoublePendulum(1, 7860, 0.5, Math.PI / 2, 1, 7860, 0.5, Math.PI / 2);
 
 let previousTimestamp = null;
 let x = 0;
