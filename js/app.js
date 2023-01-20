@@ -1,4 +1,5 @@
-let pendulum = new DoublePendulum(1, 7860, 0.5, Math.PI / 2, 1, 7860, 0.5, Math.PI / 2);
+let pendulum1 = new DoublePendulum(1, 7860, 0.5, Math.PI * 3 / 4, 1, 7860, 0.5, Math.PI * 3 / 4);
+let pendulum2 = new DoublePendulum(1, 7860, 0.5, Math.PI * 3 / 4, 1, 7860, 0.5, 1e-9 + Math.PI * 3 / 4);
 
 let previousTimestamp = null;
 let x = 0;
@@ -14,13 +15,15 @@ ctx.fillStyle = "red";
 
 function update(dt)
 {
-    pendulum.calculateNextPoint(dt);
+    pendulum1.calculateNextPoint(dt);
+    pendulum2.calculateNextPoint(dt);
 }
 
 function draw()
 {
     ctx.clearRect(0, 0, width, height);
-    pendulum.drawPendulum(ctx, width, height);
+    pendulum1.drawPendulum(ctx, width, height);
+    pendulum2.drawPendulum(ctx, width, height);
 }
 
 function loop(timestamp)
