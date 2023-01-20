@@ -1,6 +1,8 @@
 let pendulum1 = new DoublePendulum(1, 7860, 0.5, Math.PI * 3 / 4, 1, 7860, 0.5, Math.PI * 3 / 4);
 let pendulum2 = new DoublePendulum(1, 7860, 0.5, Math.PI * 3 / 4, 1, 7860, 0.5, 1e-9 + Math.PI * 3 / 4);
 
+let pendulum = new Pendulum(1, 7860, 1, Math.PI / 2);
+
 let previousTimestamp = null;
 let x = 0;
 let y = 0;
@@ -17,6 +19,7 @@ function update(dt)
 {
     pendulum1.calculateNextPoint(dt);
     pendulum2.calculateNextPoint(dt);
+    pendulum.calculateNextPoint(dt);
 }
 
 function draw()
@@ -24,6 +27,7 @@ function draw()
     ctx.clearRect(0, 0, width, height);
     pendulum1.drawPendulum(ctx, width, height);
     pendulum2.drawPendulum(ctx, width, height);
+    pendulum.drawPendulum(ctx, width, height);
 }
 
 function loop(timestamp)
