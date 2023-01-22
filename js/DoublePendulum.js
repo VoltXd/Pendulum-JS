@@ -58,21 +58,21 @@ class DoublePendulum
         const y3 = y1 - this.y2 * size / 2.2;
 
         context.strokeStyle = "black";
-        context.fillStyle = "red";
         context.beginPath();
         context.moveTo(x1, y1);
         context.lineTo(x2 - this.r1 * Math.sin(this.theta1) * size / 2.2, y2 - this.r1 * Math.cos(this.theta1) * size / 2.2);
         context.stroke();
-        context.closePath();
+        context.beginPath();
         context.moveTo(x2, y2);
         context.lineTo(x3 - this.r2 * Math.sin(this.theta2) * size / 2.2, y3 - this.r2 * Math.cos(this.theta2) * size / 2.2);
         context.stroke();
-        context.closePath();
+        context.beginPath();
+        context.fillStyle = "green";
         context.arc(x2, y2, this.r1 * size / 2.2, 0, 2 * Math.PI);
         context.fill();
-        context.closePath();
+        context.beginPath();
+        context.fillStyle = "red";
         context.arc(x3, y3, this.r2 * size / 2.2, 0, 2 * Math.PI);
         context.fill();
-        context.closePath();
     }
 }
