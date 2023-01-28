@@ -8,12 +8,32 @@
     </head>
     <body>
         <div id="wrapper">
-            <h1>Pendulum</h1>
-            <canvas id="canvas" width="800" height="600"></canvas>
+            <div id="radioButtonWrapper">
+                <h2>Pendulum view</h2>
+                <label><input type="radio" name="PendulumView" onchange="pendulumRadioChanged(this);" value="pendulums" checked/>Pendulums</label>
+                <label><input type="radio" name="PendulumView" onchange="pendulumRadioChanged(this);" value="fractal"/>Fractal</label>
+            </div>
+            <div id="pendulums">
+                <div>
+                    <h1>Pendulum</h1>
+                    <canvas id="canvasSimplePendulum" width="640" height="480"></canvas>
+                </div>
+                <div>
+                    <h1>Double Pendulum</h1>
+                    <canvas id="canvasDoublePendulum" width="640" height="480"></canvas>
+                </div>
+            </div>
+            <div id="fractal">
+                <h1>Double Pendulum Fractal</h1>
+                <canvas id="canvasDoublePendulumFractal" width="800" height="600"></canvas>
+                <p>Entropy: <span id="entropyParagraph"></span></p>
+                <p>Delay: <span id="delayParagraph"></span></p>
+            </div>
             
             <script src="js/PA_toolbox.js" type="text/javascript"></script>
             <script src="js/Pendulum.js" type="text/javascript"></script>
             <script src="js/DoublePendulum.js" type="text/javascript"></script>
+            <script src="js/DoublePendulumFractal.js" type="text/javascript"></script>
             <script src="js/app.js" type="text/javascript"></script>
         </div>
     </body>

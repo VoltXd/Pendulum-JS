@@ -5,12 +5,19 @@ class Pendulum
         this.mass = mass;
         this.density = density;
         this.length = length;
+        this.angle_t0 = angle_t0;
         this.angle = angle_t0;
         this.x = this.length * Math.sin(this.angle);
         this.y = -this.length *Math.cos(this.angle);
         
         this.angleSpeed = 0;
         this.radius = Math.pow(3 * mass / density / 4 / Math.PI, 1/3);
+    }
+
+    reset()
+    {
+        this.angle = this.angle_t0;
+        this.angleSpeed = 0;
     }
 
     calculateNextPoint(dt)
@@ -27,7 +34,7 @@ class Pendulum
     {
         const size = Math.min(width, height);
         const x1 = width/2;
-        const y1 = height/12;
+        const y1 = height/2;
         const x2 = x1 + this.x * size / 2.2;
         const y2 = y1 - this.y * size / 2.2;
 

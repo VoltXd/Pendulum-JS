@@ -19,4 +19,25 @@ canvas
     border: solid black 1px;
 }
 
+#radioButtonWrapper
+{
+    border: solid;
+    text-align: left;
+}
+
+#radioButtonWrapper label
+{
+    display: block;
+}
+
+[hidden]
+{
+    display: none !important;
+}
+
+#pendulums
+{
+    display: flex;
+    justify-content: center;
+}
 

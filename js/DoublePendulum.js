@@ -5,6 +5,7 @@ class DoublePendulum
         this.m1 = m1;
         this.rho1 = rho1;
         this.l1 = l1;
+        this.theta1_t0 = theta1_t0;
         this.theta1 = theta1_t0;
         this.omega1 = 0;
         this.omega1_1 = 0;
@@ -16,6 +17,7 @@ class DoublePendulum
         this.m2 = m2;
         this.rho2 = rho2;
         this.l2 = l2;
+        this.theta2_t0 = theta2_t0;
         this.theta2 = theta2_t0;
         this.omega2 = 0;
         this.omega2_1 = 0;
@@ -23,6 +25,18 @@ class DoublePendulum
         this.x2 = this.l2 * Math.sin(theta2_t0);
         this.y2 = this.l2 * Math.cos(theta2_t0);
         this.r2 = Math.pow(3 * m2 / rho2 / 4 / Math.PI, 1/3);
+    }
+
+    reset()
+    {
+        this.theta1 = this.theta1_t0;
+        this.theta2 = this.theta2_t0;
+        this.omega1 = 0;
+        this.omega1_1 = 0;
+        this.gamma1_1 = 0;
+        this.omega2 = 0;
+        this.omega2_1 = 0;
+        this.gamma2_1 = 0;
     }
 
     calculateNextPoint(dt)
